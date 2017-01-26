@@ -39,15 +39,41 @@ function move(){
     console.log('-------------------');
     prompt.get(['move'], (err, res)=> {
         let move = res.move.split(',');
+        if (board[move[0]][move[1] !== "" || move[0] > 2 || move[1] > 2){
+            console.log('This choice is invalid, try again!');
+        }
         p1turn ? board[move[0]][move[1]] = 'X' : board[move[0]][move[1]] = 'O';
         p1turn = !p1turn;
         p1turn ? console.log('Now, Player 1 it is your turn!') : console.log('Now, Player 2 it is your turn!');
+        // validate() // run this to check if there is a winning row, column, diagonal on the board
         next();
     });
 }
 
 function next(){
     return move();
+}
+
+var results = {
+    r1 : [],
+    r2 : [],
+    r3 : [],
+    c1 : [],
+    c2 : [],
+    c3 : [],
+    d1 : [],
+    d2 : []
+}
+
+function validate(){ // after each move, run validate function
+    for(var i = 0; i < board[i].length; i++){
+        for(var j = 0; j < board[j].length; j++){
+            // loop through each spot and insert corresponding move into specific results obj
+                // check if any results array's length is 3 and if they are all X's or O's
+                    // display winner!
+            // reset game
+        }
+    }
 }
 
 getPlayer1();
