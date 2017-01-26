@@ -109,4 +109,8 @@ function validate(){ // after each move, run validate function
     }
 }
 
+function getWinner(){
+    // loop through results object to display winner
+}
+
 getPlayer1();
