@@ -66,13 +66,46 @@ var results = {
 }
 
 function validate(){ // after each move, run validate function
-    for(var i = 0; i < board[i].length; i++){
-        for(var j = 0; j < board[j].length; j++){
+    for(var i = 0; i < board,length; i++){
+        for(var j = 0; j < board[i].length; j++){
+            let col = board[i][j];
             // loop through each spot and insert corresponding move into specific results obj
                 // check if any results array's length is 3 and if they are all X's or O's
                     // display winner!
             // reset game
-        }
+            if (i === 0) {
+                results.r1[0] = col;
+                results.d1[0] = col;
+            if (j === 0) {
+                results.c1[0] = col;
+            } else if (j === 1) {
+                results.c2[1] = col;
+            } else if (j === 2) {
+                results.c3[2] = col;
+                results.d2[0] = col;
+            }
+        } else if (i === 1) {
+                results.r2[1] = col;
+            if (j === 0) {
+                results.c1[0] = col;
+            } else if (j === 1) {
+                results.c2[1] = col;
+                results.d1[1] = col;
+                results.d2[1] = col;
+            } else if (j === 2) {
+                results.c3[2] = col;
+            }
+        } else if (i === 2) {
+                results.r3[2] = col;
+            if (j === 0) {
+                results.c1[0] = col;
+                results.d2[2] = col;
+            } else if (j === 1) {
+                results.c2[1] = col;
+            } else if (j === 2) {
+                results.c3[2] = col;
+                results.d1[2] = col;
+            }
     }
 }
 
